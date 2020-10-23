@@ -87,8 +87,8 @@ if [[ ! -d "$pytorch_rootdir" ]]; then
     # TODO probably safe to completely remove this
     git clone https://github.com/pytorch/pytorch $pytorch_rootdir
     pushd $pytorch_rootdir
-    if ! git checkout v${PYTORCH_BUILD_VERSION}; then
-          git checkout tags/v${PYTORCH_BUILD_VERSION}
+    if ! git checkout ${PYTORCH_BRANCH}; then
+          git checkout tags/${PYTORCH_BRANCH}
     fi
 else
     pushd $pytorch_rootdir
